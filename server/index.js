@@ -10,6 +10,7 @@ import env from 'dotenv'
 
 import authRouter from './router/index.js'
 import productRouter from './router/productRouter.js'
+import stripeRouter from './router/stripeRouter.js'
 
 // middlewares
 import errorMiddleware from './middleware/errorMiddleware.js'
@@ -31,6 +32,7 @@ app.use(cors({
 
 app.use('/api', authRouter)
 app.use('/api', productRouter)
+app.use('/api', stripeRouter)
 
 app.use(errorMiddleware)
 
